@@ -1,0 +1,5 @@
+node_modules/
+public/images/
+public/javascripts/
+.idea/jsLibraryMappings.xml
+.idea/runConfigurations/
