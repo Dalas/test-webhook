@@ -1,0 +1,41 @@
+{
+  "apps" : [
+    {
+      "name"      : "test-webhook",
+      "script"    : "./bin/www",
+      "env_webhook": {
+        "port": 14488,
+        "path": "/webhook",
+        "secret": "top_secret"
+      },
+      "watch": ["**/*"],
+      "ignore_watch" : ["node_modules"],
+      "watch_options": {
+        "followSymlinks": false
+      },
+      "env": {
+        "NODE_ENV": "development",
+        "PORT": "1489"
+      },
+      "env_production" : {
+        "NODE_ENV": "production",
+        "PORT": "1488"
+      }
+    }
+  ],
+  "deploy" : {
+    "production" : {
+      "user" : "root",
+      "host" : "93.188.167.146",
+      "repo" : "git@github.com:Dalas/test-webhook.git",
+      "ref"  : "origin/master",
+      "path" : "/srv/test-webhook",
+      "post-setup": "echo 'commands or a script path to be run on the host after cloning the repo'",
+      "post-deploy" : "pm2 startOrRestart ecosystem.json --env production",
+      "pre-deploy-local" : "echo 'This is a local executed command'",
+      "env"  : {
+        "NODE_ENV": "production"
+      }
+    }
+  }
+}
