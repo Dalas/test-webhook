@@ -1,5 +1,7 @@
 #!/bin/bash
 
-echo 'Start'
+echo 'Start' > bash-log.txt
 npm install
-echo 'Stop'
+echo 'Stop' > bash-log.txt
+
+exit
