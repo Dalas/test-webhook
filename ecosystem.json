@@ -8,7 +8,7 @@
         "path": "/webhook",
         "secret": "top_secret",
         "pre_hook": "",
-        "post_hook": "builder.sh"
+        "post_hook": "./builder.sh"
       },
       "env": {
         "NODE_ENV": "development",
