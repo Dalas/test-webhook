@@ -7,8 +7,8 @@
         "port": 14488,
         "path": "/webhook",
         "secret": "top_secret",
-        "pre_hook": "echo 'pre';",
-        "post_hook": "echo 'post';"
+        "pre_hook": "echo pre",
+        "post_hook": "echo post"
       },
       "env": {
         "NODE_ENV": "development",
